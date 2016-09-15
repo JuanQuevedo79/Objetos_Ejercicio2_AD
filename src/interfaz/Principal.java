@@ -33,7 +33,7 @@ public class Principal extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         txtDenominador_1 = new javax.swing.JTextField();
         txtDenominador_2 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cmbOperaciones = new javax.swing.JComboBox<String>();
         jTextField4 = new javax.swing.JTextField();
         txtNumerador_2 = new javax.swing.JTextField();
         txtEntero_2 = new javax.swing.JTextField();
@@ -41,17 +41,12 @@ public class Principal extends javax.swing.JFrame {
         txtNumerador_1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         txtEntero_3 = new javax.swing.JTextField();
-        txtDenominador3_ = new javax.swing.JTextField();
+        txtDenominador_3 = new javax.swing.JTextField();
         txtNumerador_3 = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
         cmdCalcular = new javax.swing.JButton();
         cmdBorrar = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        txtNumerador_4 = new javax.swing.JTextField();
-        txtDenominador_4 = new javax.swing.JTextField();
-        jSeparator4 = new javax.swing.JSeparator();
-        cmdCalcular_2 = new javax.swing.JButton();
-        cmdBorrar_2 = new javax.swing.JButton();
+        cmdCalcularFraccionario = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,7 +54,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel1.setText("OPERACIONES CON MIXTOS");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, -1, -1));
 
         txtEntero_1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,8 +66,8 @@ public class Principal extends javax.swing.JFrame {
         jPanel1.add(txtDenominador_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 60, -1));
         jPanel1.add(txtDenominador_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 60, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Suma", "Resta", "Multiplicación", "División" }));
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, 60, -1));
+        cmbOperaciones.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Suma", "Resta", "Multiplicación", "División" }));
+        jPanel1.add(cmbOperaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, 60, -1));
         jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 60, -1));
         jPanel1.add(txtNumerador_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 60, -1));
 
@@ -96,66 +91,37 @@ public class Principal extends javax.swing.JFrame {
         });
         jPanel1.add(txtEntero_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 100, 40, 30));
 
-        txtDenominador3_.setEditable(false);
-        jPanel1.add(txtDenominador3_, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 120, 60, -1));
+        txtDenominador_3.setEditable(false);
+        jPanel1.add(txtDenominador_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 120, 60, -1));
 
         txtNumerador_3.setEditable(false);
         jPanel1.add(txtNumerador_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 60, -1));
         jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 80, 10));
 
         cmdCalcular.setText("Calcular");
-        jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, -1, -1));
+        jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, -1, -1));
 
         cmdBorrar.setText("Limpiar");
-        jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, -1, -1));
+        cmdBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdBorrarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 230, -1, -1));
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CONVERSION A FRACCIONARIO", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 0, 14))); // NOI18N
-
-        cmdCalcular_2.setText("Calcular");
-
-        cmdBorrar_2.setText("Limpiar");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cmdCalcular_2)
-                    .addComponent(cmdBorrar_2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(txtNumerador_4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(txtDenominador_4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNumerador_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cmdCalcular_2))
-                .addGap(8, 8, 8)
-                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtDenominador_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cmdBorrar_2))
-                .addContainerGap(19, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, 230, 120));
+        cmdCalcularFraccionario.setText("Calcular Fraccionario");
+        cmdCalcularFraccionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdCalcularFraccionarioActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdCalcularFraccionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 679, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -176,6 +142,24 @@ public class Principal extends javax.swing.JFrame {
     private void txtEntero_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEntero_3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEntero_3ActionPerformed
+
+    private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
+        txtNumerador_1.setText("");
+        txtNumerador_2.setText("");
+        txtNumerador_3.setText("");
+        txtDenominador_1.setText("");
+        txtDenominador_2.setText("");
+        txtDenominador_3.setText("");
+        txtEntero_1.setText("");
+        txtEntero_2.setText("");
+        txtEntero_3.setText("");
+        txtEntero_1.requestFocusInWindow();
+        cmbOperaciones.setSelectedIndex(0);
+    }//GEN-LAST:event_cmdBorrarActionPerformed
+
+    private void cmdCalcularFraccionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularFraccionarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmdCalcularFraccionarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -213,30 +197,25 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cmbOperaciones;
     private javax.swing.JButton cmdBorrar;
-    private javax.swing.JButton cmdBorrar_2;
     private javax.swing.JButton cmdCalcular;
-    private javax.swing.JButton cmdCalcular_2;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton cmdCalcularFraccionario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField txtDenominador3_;
     private javax.swing.JTextField txtDenominador_1;
     private javax.swing.JTextField txtDenominador_2;
-    private javax.swing.JTextField txtDenominador_4;
+    private javax.swing.JTextField txtDenominador_3;
     private javax.swing.JTextField txtEntero_1;
     private javax.swing.JTextField txtEntero_2;
     private javax.swing.JTextField txtEntero_3;
     private javax.swing.JTextField txtNumerador_1;
     private javax.swing.JTextField txtNumerador_2;
     private javax.swing.JTextField txtNumerador_3;
-    private javax.swing.JTextField txtNumerador_4;
     // End of variables declaration//GEN-END:variables
 }
